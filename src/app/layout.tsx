@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
+import { AppProvider } from "../components/AppProvider";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Kanso | Evaluasi Pelamar",
+  title: "Seleva | Evaluasi Pelamar",
   description: "Sistem evaluasi CV berbasis AI",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="id" className="h-full antialiased">
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="id" className="h-full antialiased" data-scroll-behavior="smooth">
+      <body className="min-h-screen">
+        <AppProvider>{children}</AppProvider>
+      </body>
     </html>
   );
 }
